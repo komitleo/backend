@@ -1,18 +1,20 @@
 package pl.komitleo.graveonline.admin.person.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Entity
+@Builder
 @Table(name = "person")
-public class Person {
+public class AdminPerson {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
