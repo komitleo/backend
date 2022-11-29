@@ -43,12 +43,9 @@ public class AdminPersonController {
                 .id(id)
                 .name(adminPersonDto.getName())
                 .last_name(adminPersonDto.getLast_name())
-                .rrow((adminPersonDto.getRrow()))
-                .place_in_rrow(adminPersonDto.getPlace_in_rrow())
                 .age(adminPersonDto.getAge())
                 .date_of_death(adminPersonDto.getDate_of_death())
                 .grave_number(adminPersonDto.getGrave_number())
-                .sector(adminPersonDto.getSector())
                 .build();
     }
 }
