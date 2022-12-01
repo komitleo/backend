@@ -1,5 +1,6 @@
 package pl.komitleo.graveonline.admin.grave.controller.dto;
 
+import lombok.Builder;
 import lombok.Getter;
 
 @Getter
@@ -9,5 +10,4 @@ public class AdminGraveDto {
     private String sector;
     private String row_number;
     private String place_in_row;
-
 }

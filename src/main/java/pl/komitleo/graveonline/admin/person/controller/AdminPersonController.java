@@ -27,15 +27,12 @@ public class AdminPersonController {
 
     @PostMapping("admin/persons")
     public AdminPerson createPerson(@RequestBody AdminPersonDto adminPersonDto){
-        return adminPersonService.createPerson(mapAdminPerson(adminPersonDto, EMPTY_ID)
-        );
+        return adminPersonService.createPerson(mapAdminPerson(adminPersonDto, EMPTY_ID));
     }
 
     @PutMapping("admin/persons/{id}")
     public AdminPerson updatePerson(@RequestBody AdminPersonDto adminPersonDto, @PathVariable Long id){
-        return adminPersonService.updatePerson(mapAdminPerson(adminPersonDto, id)
-
-        );
+        return adminPersonService.updatePerson(mapAdminPerson(adminPersonDto, id));
     }
 
     private AdminPerson mapAdminPerson(@RequestBody AdminPersonDto adminPersonDto, @PathVariable Long id) {
@@ -45,7 +42,6 @@ public class AdminPersonController {
                 .last_name(adminPersonDto.getLast_name())
                 .age(adminPersonDto.getAge())
                 .date_of_death(adminPersonDto.getDate_of_death())
-                .grave_number(adminPersonDto.getGrave_number())
                 .build();
     }
 }

@@ -5,3 +5,4 @@ alter table person
     drop column place_in_rrow,
     drop column rrow,
     drop column sector
+

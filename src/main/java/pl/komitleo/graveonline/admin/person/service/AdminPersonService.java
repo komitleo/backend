@@ -16,15 +16,12 @@ public class AdminPersonService {
     public List<AdminPerson> getPersons(){
         return adminPersonRepository.findAll();
     }
-
     public AdminPerson getPerson(Long id) {
         return adminPersonRepository.findById(id).orElseThrow();
     }
-
     public AdminPerson createPerson(AdminPerson person) {
         return adminPersonRepository.save(person);
     }
-
     public AdminPerson updatePerson(AdminPerson person) {
         return adminPersonRepository.save(person);
     }

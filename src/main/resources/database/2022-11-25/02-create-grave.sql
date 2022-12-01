@@ -1,5 +1,5 @@
 --liquibase formatted sql
---changeset jaceknowak:3
+--changeset jaceknowak:4
 
 create table grave (
     id bigint not null auto_increment PRIMARY KEY,

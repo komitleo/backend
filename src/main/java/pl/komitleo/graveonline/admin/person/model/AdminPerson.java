@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import pl.komitleo.graveonline.admin.grave.model.AdminGrave;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -22,6 +23,6 @@ public class AdminPerson {
     private String name;
     private String last_name;
     private Date date_of_death;
-    private int age;
-    private int grave_number;
+    private String age;
+    private Long grave_id;
 }
