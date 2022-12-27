@@ -1,9 +1,11 @@
 package pl.komitleo.graveonline.admin.person.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import pl.komitleo.graveonline.admin.grave.controller.dto.AdminGraveDto;
 import pl.komitleo.graveonline.admin.grave.model.AdminGrave;
 
 import javax.persistence.*;
@@ -21,8 +23,11 @@ public class AdminPerson {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String last_name;
-    private Date date_of_death;
+    private String lastName;
+    private Date dateOfDeath;
     private String age;
-    private Long grave_id;
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    private AdminGrave adminGrave;
 }

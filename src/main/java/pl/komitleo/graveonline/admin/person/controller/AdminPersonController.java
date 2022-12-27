@@ -7,6 +7,7 @@ import pl.komitleo.graveonline.admin.person.model.AdminPerson;
 import pl.komitleo.graveonline.admin.person.service.AdminPersonService;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequiredArgsConstructor
@@ -25,6 +26,11 @@ public class AdminPersonController {
         return adminPersonService.getPerson(id);
     }
 
+    @GetMapping("admin/persons/name/{name}")
+    public List<AdminPerson> getPersonByLastName(@PathVariable String name){
+        return adminPersonService.findByLastName(name);
+    }
+
     @PostMapping("admin/persons")
     public AdminPerson createPerson(@RequestBody AdminPersonDto adminPersonDto){
         return adminPersonService.createPerson(mapAdminPerson(adminPersonDto, EMPTY_ID));
@@ -39,9 +45,11 @@ public class AdminPersonController {
         return AdminPerson.builder()
                 .id(id)
                 .name(adminPersonDto.getName())
-                .last_name(adminPersonDto.getLast_name())
+                .lastName(adminPersonDto.getLastName())
                 .age(adminPersonDto.getAge())
-                .date_of_death(adminPersonDto.getDate_of_death())
+                .dateOfDeath(adminPersonDto.getDateOfDeath())
                 .build();
     }
+
+
 }

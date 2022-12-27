@@ -20,12 +20,13 @@ public class AdminGrave {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String rrow_number;
-    private String grave_number;
-    private String place_in_rrow;
+    @Column(name = "rrow_number")
+    private String rowNumber;
+    @Column(name = "grave_number")
+    private String graveNumber;
+    @Column(name = "place_in_rrow")
+    private String placeInRow;
     private String sector;
-    @OneToMany
-    @JoinColumn(name = "grave_id")
+    @OneToMany(mappedBy = "adminGrave")
     private List<AdminPerson> personList;
-
 }

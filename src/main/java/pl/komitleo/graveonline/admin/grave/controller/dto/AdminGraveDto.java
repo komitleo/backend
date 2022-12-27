@@ -4,10 +4,12 @@ import lombok.Builder;
 import lombok.Getter;
 
 @Getter
+@Builder
 public class AdminGraveDto {
 
-    private String grave_number;
+    private String rowNumber;
+    private String graveNumber;
+    private String placeInRow;
     private String sector;
-    private String row_number;
-    private String place_in_row;
+
 }

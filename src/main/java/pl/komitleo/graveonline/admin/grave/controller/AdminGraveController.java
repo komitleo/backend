@@ -1,14 +1,18 @@
 package pl.komitleo.graveonline.admin.grave.controller;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import org.springframework.web.bind.annotation.*;
 import pl.komitleo.graveonline.admin.grave.controller.dto.AdminGraveDto;
 import pl.komitleo.graveonline.admin.grave.model.AdminGrave;
 import pl.komitleo.graveonline.admin.grave.service.AdminGraveService;
+import pl.komitleo.graveonline.admin.person.controller.dto.AdminPersonDto;
 
 import java.util.List;
+import java.util.Set;
 
 @AllArgsConstructor
+@Getter
 @RestController
 public class AdminGraveController {
 
@@ -18,6 +22,11 @@ public class AdminGraveController {
     @GetMapping("admin/graves")
     public List<AdminGrave> getAllGraves(){
         return graveService.getGraves();
+    }
+
+    @GetMapping("admin/graves/persons/{lastName}")
+    public Set<AdminGrave> getGraveByPersonLastName(@PathVariable String lastName ){
+         return graveService.getGraveByPersonLastName(lastName);
     }
 
     @GetMapping("admin/graves/{id}")
@@ -38,9 +47,9 @@ public class AdminGraveController {
     private AdminGrave mapAdminGrave(@RequestBody AdminGraveDto adminGraveDto, @PathVariable Long id){
        return AdminGrave.builder()
                .id(id)
-               .grave_number(adminGraveDto.getGrave_number())
-               .place_in_rrow(adminGraveDto.getPlace_in_row())
-               .rrow_number(adminGraveDto.getRow_number())
+               .placeInRow(adminGraveDto.getPlaceInRow())
+               .graveNumber(adminGraveDto.getGraveNumber())
+               .rowNumber(adminGraveDto.getRowNumber())
                .sector(adminGraveDto.getSector())
                .build();
     }

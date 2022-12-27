@@ -6,6 +6,7 @@ import pl.komitleo.graveonline.admin.grave.model.AdminGrave;
 import pl.komitleo.graveonline.admin.grave.repository.AdminGraveRepository;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 @AllArgsConstructor
@@ -15,6 +16,9 @@ public class AdminGraveService {
 
     public List<AdminGrave> getGraves(){
         return adminGraveRepository.findAll();
+    }
+    public Set<AdminGrave> getGraveByPersonLastName(String name){
+        return adminGraveRepository.findAdminGraveByPersonsLastName(name);
     }
     public AdminGrave getGrave(Long id){
         return adminGraveRepository.findById(id).orElseThrow();

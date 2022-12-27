@@ -6,6 +6,7 @@ import pl.komitleo.graveonline.admin.person.model.AdminPerson;
 import pl.komitleo.graveonline.admin.person.repository.AdminPersonRepository;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 @AllArgsConstructor
@@ -24,5 +25,9 @@ public class AdminPersonService {
     }
     public AdminPerson updatePerson(AdminPerson person) {
         return adminPersonRepository.save(person);
+    }
+
+    public List<AdminPerson> findByLastName(String lastName){
+        return adminPersonRepository.findByLastName(lastName);
     }
 }
