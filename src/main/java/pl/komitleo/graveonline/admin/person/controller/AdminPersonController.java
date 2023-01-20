@@ -2,6 +2,7 @@ package pl.komitleo.graveonline.admin.person.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import pl.komitleo.graveonline.admin.grave.model.AdminGrave;
 import pl.komitleo.graveonline.admin.person.controller.dto.AdminPersonDto;
 import pl.komitleo.graveonline.admin.person.model.AdminPerson;
 import pl.komitleo.graveonline.admin.person.service.AdminPersonService;
@@ -50,6 +51,4 @@ public class AdminPersonController {
                 .dateOfDeath(adminPersonDto.getDateOfDeath())
                 .build();
     }
-
-
 }

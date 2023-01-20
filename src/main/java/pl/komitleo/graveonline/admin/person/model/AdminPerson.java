@@ -26,7 +26,6 @@ public class AdminPerson {
     private String lastName;
     private Date dateOfDeath;
     private String age;
-
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     private AdminGrave adminGrave;

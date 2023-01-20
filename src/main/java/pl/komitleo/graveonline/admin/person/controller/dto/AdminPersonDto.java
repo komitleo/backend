@@ -16,4 +16,5 @@ public class AdminPersonDto {
     private String lastName;
     private Date dateOfDeath;
     private String age;
+    private Long graveId;
 }
